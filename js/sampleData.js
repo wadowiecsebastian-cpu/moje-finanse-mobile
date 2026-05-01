@@ -1,0 +1,100 @@
+(function () {
+  const createdAt = "2026-04-21T14:30:00.000Z";
+
+  window.FinanceSampleData = {
+    version: 1,
+    accounts: [
+      { id: "acc-cash", name: "Gotówka", type: "asset", group: "Aktywa bieżące", description: "Pieniądze w portfelu", icon: "cash", color: "#5bd66f", archived: false, createdAt },
+      { id: "acc-bank", name: "Konto bankowe", type: "asset", group: "Aktywa bieżące", description: "Konto osobiste w banku", icon: "bank", color: "#72a9ff", archived: false, createdAt },
+      { id: "acc-savings", name: "Oszczędności", type: "asset", group: "Aktywa finansowe", description: "Konto oszczędnościowe", icon: "piggy", color: "#d27cff", archived: false, createdAt },
+      { id: "acc-investments", name: "Inwestycje", type: "asset", group: "Aktywa finansowe", description: "Fundusze i lokaty", icon: "chart", color: "#55d0c5", archived: false, createdAt },
+      { id: "acc-credit-card", name: "Karta kredytowa", type: "liability", group: "Zobowiązania bieżące", description: "Visa **** 1234", icon: "card", color: "#ff5d52", archived: false, createdAt },
+      { id: "acc-loan-jan", name: "Pożyczka u Jana", type: "liability", group: "Zobowiązania długoterminowe", description: "Pożyczka prywatna", icon: "hand", color: "#ff9f2f", archived: false, createdAt },
+      { id: "acc-food", name: "Jedzenie", type: "expense", group: "Koszty", description: "Wydatki na jedzenie", icon: "cart", color: "#b86cff", archived: false, createdAt },
+      { id: "acc-transport", name: "Transport", type: "expense", group: "Koszty", description: "Paliwo, bilety, samochód", icon: "car", color: "#ff8a00", archived: false, createdAt },
+      { id: "acc-bills", name: "Rachunki", type: "expense", group: "Koszty", description: "Media, internet, telefon", icon: "bulb", color: "#ffb02e", archived: false, createdAt },
+      { id: "acc-entertainment", name: "Rozrywka", type: "expense", group: "Koszty", description: "Gry, kino, hobby", icon: "gamepad", color: "#b36bff", archived: false, createdAt },
+      { id: "acc-shopping", name: "Zakupy", type: "expense", group: "Koszty", description: "Dom, ubrania i drobiazgi", icon: "tag", color: "#56b7e8", archived: false, createdAt },
+      { id: "acc-other-expense", name: "Inne koszty", type: "expense", group: "Koszty", description: "Pozostałe wydatki", icon: "settings", color: "#9da8ac", archived: false, createdAt },
+      { id: "acc-income", name: "Wynagrodzenie", type: "income", group: "Przychody", description: "Pensja i inne dochody", icon: "briefcase", color: "#40c969", archived: false, createdAt },
+      { id: "acc-equity", name: "Kapitał początkowy", type: "transfer", group: "Kapitał", description: "Saldo otwarcia i korekty", icon: "scale", color: "#6aa8ff", archived: false, createdAt }
+    ],
+    categories: [
+      { id: "cat-food", name: "Jedzenie", type: "expense", group: "Podstawowe", description: "Żywność, restauracje, kawiarnie", icon: "cart", color: "#b86cff", archived: false },
+      { id: "cat-transport", name: "Transport", type: "expense", group: "Podstawowe", description: "Paliwo, bilety, taksi, komunikacja miejska", icon: "car", color: "#ff8a00", archived: false },
+      { id: "cat-bills", name: "Rachunki", type: "expense", group: "Podstawowe", description: "Prąd, woda, gaz, internet, telefon", icon: "bulb", color: "#ffb02e", archived: false },
+      { id: "cat-entertainment", name: "Rozrywka", type: "expense", group: "Styl życia", description: "Gry, kino, książki, hobby", icon: "gamepad", color: "#b36bff", archived: false },
+      { id: "cat-shopping", name: "Zakupy", type: "expense", group: "Styl życia", description: "Ubrania, dom, elektronika", icon: "tag", color: "#56b7e8", archived: false },
+      { id: "cat-other", name: "Inne", type: "expense", group: "Pozostałe", description: "Pozostałe wydatki", icon: "settings", color: "#9da8ac", archived: false },
+      { id: "cat-health", name: "Zdrowie", type: "expense", group: "Podstawowe", description: "Apteka, lekarze, badania", icon: "heart", color: "#ff5d86", archived: false },
+      { id: "cat-home", name: "Dom", type: "expense", group: "Podstawowe", description: "Wyposażenie i utrzymanie domu", icon: "home", color: "#55d0c5", archived: false },
+      { id: "cat-salary", name: "Wynagrodzenie", type: "income", group: "Praca", description: "Pensja, premie", icon: "briefcase", color: "#40c969", archived: false },
+      { id: "cat-freelance", name: "Freelance", type: "income", group: "Praca", description: "Projekty, zlecenia", icon: "gift", color: "#56d86f", archived: false },
+      { id: "cat-bonus", name: "Premia", type: "income", group: "Praca", description: "Premie i bonusy", icon: "spark", color: "#73e08f", archived: false },
+      { id: "cat-income-other", name: "Inne przychody", type: "income", group: "Pozostałe", description: "Zwroty i drobne wpływy", icon: "coins", color: "#8ee79d", archived: false },
+      { id: "cat-transfer", name: "Przelew między kontami", type: "transfer", group: "Transfery", description: "Przelewy między własnymi kontami", icon: "bank", color: "#72a9ff", archived: false },
+      { id: "cat-credit-payment", name: "Spłata karty kredytowej", type: "transfer", group: "Zobowiązania", description: "Spłata zadłużenia", icon: "card", color: "#ff8a00", archived: false },
+      { id: "cat-cash-withdrawal", name: "Wypłata gotówki", type: "transfer", group: "Transfery", description: "Wypłata z bankomatu", icon: "cash", color: "#ff9f2f", archived: false },
+      { id: "cat-debt-payment", name: "Spłata długu", type: "transfer", group: "Zobowiązania", description: "Raty i spłaty zobowiązań", icon: "wallet", color: "#ff5d52", archived: false },
+      { id: "cat-opening", name: "Saldo otwarcia", type: "transfer", group: "Techniczne", description: "Początkowe salda kont", icon: "scale", color: "#6aa8ff", archived: false },
+      { id: "cat-adjustment", name: "Korekta", type: "other", group: "Techniczne", description: "Korekty księgowe", icon: "settings", color: "#aeb7bf", archived: false }
+    ],
+    entries: [
+      { id: "entry-open-bank", date: "2026-03-31", description: "Saldo otwarcia - konto bankowe", categoryId: "cat-opening", debitAccountId: "acc-bank", creditAccountId: "acc-equity", debitAmount: 6859, creditAmount: 6859, amount: 6859, note: "Początkowe saldo konta bankowego.", type: "opening", createdAt, updatedAt: createdAt },
+      { id: "entry-open-cash", date: "2026-03-31", description: "Saldo otwarcia - gotówka", categoryId: "cat-opening", debitAccountId: "acc-cash", creditAccountId: "acc-equity", debitAmount: 2050, creditAmount: 2050, amount: 2050, note: "Początkowa gotówka.", type: "opening", createdAt, updatedAt: createdAt },
+      { id: "entry-open-savings", date: "2026-03-31", description: "Saldo otwarcia - oszczędności", categoryId: "cat-opening", debitAccountId: "acc-savings", creditAccountId: "acc-equity", debitAmount: 4700, creditAmount: 4700, amount: 4700, note: "Początkowe oszczędności.", type: "opening", createdAt, updatedAt: createdAt },
+      { id: "entry-open-investments", date: "2026-03-31", description: "Saldo otwarcia - inwestycje", categoryId: "cat-opening", debitAccountId: "acc-investments", creditAccountId: "acc-equity", debitAmount: 2000, creditAmount: 2000, amount: 2000, note: "Początkowa wartość inwestycji.", type: "opening", createdAt, updatedAt: createdAt },
+      { id: "entry-open-card", date: "2026-03-31", description: "Saldo otwarcia - karta kredytowa", categoryId: "cat-opening", debitAccountId: "acc-equity", creditAccountId: "acc-credit-card", debitAmount: 1905, creditAmount: 1905, amount: 1905, note: "Początkowe zadłużenie karty.", type: "opening", createdAt, updatedAt: createdAt },
+      { id: "entry-open-loan", date: "2026-03-31", description: "Saldo otwarcia - pożyczka u Jana", categoryId: "cat-opening", debitAccountId: "acc-equity", creditAccountId: "acc-loan-jan", debitAmount: 1000, creditAmount: 1000, amount: 1000, note: "Początkowe saldo pożyczki.", type: "opening", createdAt, updatedAt: createdAt },
+      { id: "entry-income-other", date: "2026-04-03", description: "Zwrot kosztów", categoryId: "cat-income-other", debitAccountId: "acc-bank", creditAccountId: "acc-income", debitAmount: 200, creditAmount: 200, amount: 200, note: "", type: "income", createdAt, updatedAt: createdAt },
+      { id: "entry-bonus", date: "2026-04-06", description: "Premia kwartalna", categoryId: "cat-bonus", debitAccountId: "acc-bank", creditAccountId: "acc-income", debitAmount: 400, creditAmount: 400, amount: 400, note: "", type: "income", createdAt, updatedAt: createdAt },
+      { id: "entry-gas", date: "2026-04-07", description: "Rachunek za gaz", categoryId: "cat-bills", debitAccountId: "acc-bills", creditAccountId: "acc-bank", debitAmount: 120, creditAmount: 120, amount: 120, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-food-week", date: "2026-04-08", description: "Zakupy tygodniowe", categoryId: "cat-food", debitAccountId: "acc-food", creditAccountId: "acc-bank", debitAmount: 420, creditAmount: 420, amount: 420, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-other-home", date: "2026-04-09", description: "Artykuły domowe", categoryId: "cat-other", debitAccountId: "acc-other-expense", creditAccountId: "acc-bank", debitAmount: 254, creditAmount: 254, amount: 254, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-cinema", date: "2026-04-10", description: "Kino", categoryId: "cat-entertainment", debitAccountId: "acc-entertainment", creditAccountId: "acc-bank", debitAmount: 155, creditAmount: 155, amount: 155, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-freelance", date: "2026-04-11", description: "Projekt freelance", categoryId: "cat-freelance", debitAccountId: "acc-bank", creditAccountId: "acc-income", debitAmount: 800, creditAmount: 800, amount: 800, note: "", type: "income", createdAt, updatedAt: createdAt },
+      { id: "entry-internet", date: "2026-04-11", description: "Internet domowy", categoryId: "cat-bills", debitAccountId: "acc-bills", creditAccountId: "acc-bank", debitAmount: 110, creditAmount: 110, amount: 110, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-ticket", date: "2026-04-12", description: "Bilet miesięczny", categoryId: "cat-transport", debitAccountId: "acc-transport", creditAccountId: "acc-bank", debitAmount: 270, creditAmount: 270, amount: 270, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-restaurant", date: "2026-04-13", description: "Restauracja", categoryId: "cat-food", debitAccountId: "acc-food", creditAccountId: "acc-bank", debitAmount: 180, creditAmount: 180, amount: 180, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-shopping", date: "2026-04-14", description: "Zakupy online", categoryId: "cat-shopping", debitAccountId: "acc-shopping", creditAccountId: "acc-bank", debitAmount: 200, creditAmount: 200, amount: 200, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-steam", date: "2026-04-15", description: "Gra na Steam", categoryId: "cat-entertainment", debitAccountId: "acc-entertainment", creditAccountId: "acc-credit-card", debitAmount: 95, creditAmount: 95, amount: 95, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-electricity", date: "2026-04-16", description: "Rachunek za prąd", categoryId: "cat-bills", debitAccountId: "acc-bills", creditAccountId: "acc-bank", debitAmount: 150, creditAmount: 150, amount: 150, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-cash", date: "2026-04-17", description: "Wypłata gotówki", categoryId: "cat-cash-withdrawal", debitAccountId: "acc-cash", creditAccountId: "acc-bank", debitAmount: 300, creditAmount: 300, amount: 300, note: "Wypłata z bankomatu.", type: "transfer", createdAt, updatedAt: createdAt },
+      { id: "entry-card-payment", date: "2026-04-18", description: "Spłata karty kredytowej", categoryId: "cat-credit-payment", debitAccountId: "acc-credit-card", creditAccountId: "acc-bank", debitAmount: 400, creditAmount: 400, amount: 400, note: "", type: "debt-payment", createdAt, updatedAt: createdAt },
+      { id: "entry-savings", date: "2026-04-19", description: "Przelew na oszczędności", categoryId: "cat-transfer", debitAccountId: "acc-savings", creditAccountId: "acc-bank", debitAmount: 500, creditAmount: 500, amount: 500, note: "", type: "transfer", createdAt, updatedAt: createdAt },
+      { id: "entry-fuel", date: "2026-04-20", description: "Paliwo", categoryId: "cat-transport", debitAccountId: "acc-transport", creditAccountId: "acc-bank", debitAmount: 180, creditAmount: 180, amount: 180, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-groceries", date: "2026-04-21", description: "Zakupy spożywcze", categoryId: "cat-food", debitAccountId: "acc-food", creditAccountId: "acc-bank", debitAmount: 120, creditAmount: 120, amount: 120, note: "", type: "expense", createdAt, updatedAt: createdAt },
+      { id: "entry-salary", date: "2026-04-21", description: "Wynagrodzenie", categoryId: "cat-salary", debitAccountId: "acc-bank", creditAccountId: "acc-income", debitAmount: 4000, creditAmount: 4000, amount: 4000, note: "", type: "income", createdAt, updatedAt: createdAt }
+    ],
+    debts: [
+      { id: "debt-card", name: "Karta kredytowa Visa", type: "credit-card", creditorDebtor: "Bank ABC", initialAmount: 1905, remainingAmount: 1600, interestRate: 18.5, nextPaymentDate: "2026-05-05", minimumPayment: 450, status: "active", linkedAccountId: "acc-credit-card", createdAt },
+      { id: "debt-loan-cash", name: "Kredyt gotówkowy", type: "loan", creditorDebtor: "Bank XYZ", initialAmount: 5200, remainingAmount: 5200, interestRate: 9.9, nextPaymentDate: "2026-04-28", minimumPayment: 1200, status: "active", linkedAccountId: "", createdAt },
+      { id: "debt-jan", name: "Pożyczka u Jana", type: "private-loan", creditorDebtor: "Jan Kowalski", initialAmount: 1000, remainingAmount: 1000, interestRate: 0, nextPaymentDate: "2026-06-01", minimumPayment: 500, status: "active", linkedAccountId: "acc-loan-jan", createdAt },
+      { id: "debt-anna", name: "Dług wobec Anny", type: "obligation", creditorDebtor: "Anna Nowak", initialAmount: 650, remainingAmount: 650, interestRate: 0, nextPaymentDate: "", minimumPayment: 0, status: "active", linkedAccountId: "", createdAt }
+    ],
+    settings: {
+      currency: "PLN",
+      language: "pl",
+      dateFormat: "DD.MM.RRRR",
+      numberFormat: "pl-PL",
+      timezone: "Europe/Warsaw",
+      showDashboardBalances: true,
+      confirmBeforeDelete: true,
+      roundAmounts: true,
+      appLock: true,
+      lockMethod: "PIN",
+      autoLock: "5",
+      privacyMode: false,
+      automaticBackup: true,
+      backupFrequency: "daily",
+      notifications: true,
+      theme: "dark",
+      lastBackup: "2026-04-20T23:45:00.000Z"
+    },
+    backups: [
+      { id: "backup-1", fileName: "moje_finanse_2026-04-21_14-30.json", createdAt: "2026-04-21T14:30:00.000Z", size: 2450000, range: "Wszystkie dane", data: null },
+      { id: "backup-2", fileName: "moje_finanse_2026-04-15_09-12.json", createdAt: "2026-04-15T09:12:00.000Z", size: 2310000, range: "Wszystkie dane", data: null },
+      { id: "backup-3", fileName: "operacje_marzec_2026.json", createdAt: "2026-03-31T18:45:00.000Z", size: 1120000, range: "Zakres dat: 01.03.2026 - 31.03.2026", data: null }
+    ]
+  };
+})();

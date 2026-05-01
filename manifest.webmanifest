@@ -1,0 +1,12 @@
+{
+  "name": "Moje Finanse",
+  "short_name": "Finanse",
+  "description": "Mobilna wersja aplikacji do zarzadzania finansami osobistymi.",
+  "start_url": "index.html",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#071421",
+  "theme_color": "#071421",
+  "lang": "pl"
+}
